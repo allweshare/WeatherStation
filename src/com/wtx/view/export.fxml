@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="dlg_export" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" prefHeight="525.0" prefWidth="461.0" style="-fx-border-color: grey; -fx-background-color: #1F1F1F; -fx-border-width: 5; -fx-border-radius: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wtx.controller.DataExport">
+   <children>
+      <VBox alignment="CENTER" style="-fx-border-color: grey; -fx-border-width: 3; -fx-border-radius: 20;">
+         <VBox.margin>
+            <Insets bottom="10.0" left="50.0" right="50.0" top="20.0" />
+         </VBox.margin>
+         <children>
+            <Label text="选择导出时间范围" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label text="从" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="picker_start" editable="false" prefHeight="23.0" prefWidth="112.0" />
+                  <Label text="到" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="picker_end" editable="false" prefHeight="23.0" prefWidth="119.0" />
+               </children>
+            </HBox>
+            <Separator prefHeight="5.0" style="-fx-background-color: grey;">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Label layoutX="114.0" layoutY="84.0" text="选择导出时间范围" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefWidth="345.0">
+               <children>
+                  <RadioButton fx:id="rdb_txt" mnemonicParsing="false" selected="true" text="纯文本" textFill="WHITE">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="export_ext" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="Microsoft YaHei" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="rdb_excel" mnemonicParsing="false" text="Excel" textFill="WHITE" toggleGroup="$export_ext">
+                     <font>
+                        <Font name="Microsoft YaHei" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Separator minHeight="5.0" style="-fx-background-color: grey;">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Label layoutX="114.0" layoutY="113.0" text="选择导出文件路径" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label text="导出目录:" textFill="WHITE">
+                     <font>
+                        <Font name="Microsoft YaHei" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_path" prefHeight="23.0" prefWidth="222.0" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <Label fx:id="lab_err_msg" text="错误提示!" textFill="RED">
+         <font>
+            <Font name="Microsoft YaHei Bold" size="16.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefWidth="200.0">
+         <children>
+            <Button fx:id="btn_export" mnemonicParsing="false" onAction="#on_btn_export" prefHeight="40.0" prefWidth="80.0" text="导出">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btn_cancel" mnemonicParsing="false" onAction="#on_btn_cancel" prefHeight="40.0" prefWidth="80.0" text="关闭">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefWidth="451.0">
+         <children>
+            <Label text="导出进度：" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="lab_curr_record" text="13:15:00    " textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefWidth="451.0">
+         <children>
+            <ProgressBar fx:id="progress_export" prefHeight="27.0" prefWidth="420.0" progress="0.0" />
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

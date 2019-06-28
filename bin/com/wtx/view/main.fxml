@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:id="grid_parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-border-color: white; -fx-border-radius: 3; -fx-border-width: 5; -fx-background-radius: 3; -fx-background-color: #1F1F1F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wtx.controller.MainFrame">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints halignment="CENTER" maxWidth="81.0" minWidth="10.0" prefWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="10.0" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Separator opacity="0.48" orientation="VERTICAL" prefHeight="100.0" prefWidth="0.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowSpan="4" />
+      <TableView fx:id="table_data" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3">
+        <columns>
+          <TableColumn editable="false" prefWidth="64.0" sortable="false" text="  时间&#10;(hh:mm:ss)" />
+          <TableColumn editable="false" minWidth="0.0" prefWidth="43.0" sortable="false" text="温度&#10;(℃)" />
+            <TableColumn editable="false" prefWidth="51.0" sortable="false" text=" 湿度&#10;(%RH)" />
+            <TableColumn editable="false" prefWidth="52.0" sortable="false" text="气压&#10;(hPa)" />
+            <TableColumn editable="false" sortable="false" text="   瞬时风&#10;(风速|风向)" />
+            <TableColumn editable="false" prefWidth="79.0" sortable="false" text=" 一分钟风&#10;(风速|风向)" />
+            <TableColumn editable="false" prefWidth="72.0" sortable="false" text=" 十分钟风&#10;(风速|风向)" />
+            <TableColumn editable="false" prefWidth="65.0" sortable="false" text="雨量&#10;(mm)" />
+        </columns>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" />
+         </GridPane.margin>
+      </TableView>
+      <Separator prefHeight="3.0" prefWidth="85.0" style="-fx-background-color: grey;" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+      <Separator prefHeight="3.0" prefWidth="86.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+      <TabPane fx:id="tab_panel" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="3">
+        <tabs>
+          <Tab text="串口通信" />
+          <Tab text="网络通信" />
+            <Tab text="蓝牙通信" />
+        </tabs>
+      </TabPane>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btn_history" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#on_btn_history" prefWidth="130.0" text="浏览数据 (F5)" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="SimHei" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_export" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#on_btn_export" prefWidth="130.0" text="导出数据 (F6)" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="SimHei" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#on_btn_report" prefWidth="130.0" text="生成报表 (F7)" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="SimHei" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#on_btn_exit" prefWidth="130.0" text="退    出 (F8)" textAlignment="CENTER">
+                     <font>
+                        <Font name="SimHei" size="14.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</GridPane>

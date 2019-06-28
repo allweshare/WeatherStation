@@ -1,0 +1,120 @@
+
+.button {
+	-fx-background-radius: 15;
+	-fx-background-color: transparent;
+	-fx-border-width: 3;
+	-fx-border-color: white;
+	-fx-border-radius: 15;
+	-fx-font-family: SimHei;
+	-fx-font-size: 14;
+	-fx-text-fill: white;
+}
+
+.button:hover {
+	-fx-background-color: #80808080;
+}
+
+.button:pressed {
+	-fx-background-color: grey;
+}
+
+/*--------------------------------------------------------- */
+
+.tab-pane {
+	-fx-border-width: 1;
+	-fx-border-color: grey;
+}
+
+.tab-label {
+	-fx-font-size: 12;
+    -fx-font-family: "SimHei";
+    -fx-text-fill: white;
+}
+
+.tab-header-background {
+	/*-fx-background-image: url(/com/wtx/img/bkg.jpg);*/
+    -fx-background-color: transparent;
+}
+
+.tab {
+	-fx-background-color: transparent;
+	-fx-border-width: 1;
+	-fx-border-color: white;
+	-fx-border-radius: 5;
+}
+
+/*--------------------------------------------------------- */
+.text-area {
+	-fx-font-family: Microsoft YaHei;
+	-fx-font-size: 12;
+	-fx-text-fill: white;
+}
+.text-area .content{
+	-fx-border-radius: 15;
+  	/**-fx-background-image: url(/com/wtx/img/bkg.jpg);**/
+  	-fx-background-color: #1F1F1F;
+}
+
+/*--------------------------------------------------------- */
+
+.combo-box-base  
+{
+    -fx-background-color: white, white, white, white;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 0;
+}
+
+.combo-box-popup .list-view .list-cell
+{
+    /**-fx-background-image: url(/com/wtx/img/bkg.jpg);**/
+    -fx-background-color: #1F1F1F;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: -fx-focus-color;
+}
+
+/*--------------------------------------------------------- */
+
+.table-view {
+	/*-fx-background-image: url(/com/wtx/img/bkg.jpg);*/
+	/*-fx-control-inner-background: url(/com/wtx/img/bkga.jpg);*/
+    -fx-background-color: #1F1F1F;
+    -fx-table-cell-border-color: grey;
+    -fx-control-inner-background: #1F1F1F;
+    -fx-table-header-border-color: white;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #1F1F1F;
+    /*-fx-background-image: url(/com/wtx/img/bkg.jpg)*/
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: #1F1F1F;
+    /*-fx-background-image: url(/com/wtx/img/bkg.jpg);*/
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 12;
+    -fx-font-family: "SimHei";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
